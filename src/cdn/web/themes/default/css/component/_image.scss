@@ -1,0 +1,18 @@
+// 数组
+$imgArr:(img01, 125px, 29px, 0, none, pointer),
+        (img02, 31px, 31px, 0, $bg_img_normal, pointer),
+        (img03, 138px, 138px, 0, $bg_img_normal, default),
+        (img04, 240px, 264px, 0, $bg_img_normal, default),
+;
+@each $imgName, $width, $height, $radius, $bgColor, $cursor in $imgArr{
+  .#{$imgName}{
+    width: $width;
+    height: $height;
+    cursor: $cursor;
+    overflow: hidden;
+    border-radius: $radius;
+    background-color: $bgColor;
+
+    & > img { width: 100%; height: 100%; vertical-align: top; }
+  }
+}

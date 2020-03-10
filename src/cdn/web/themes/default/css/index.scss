@@ -1,0 +1,16 @@
+// 变量
+@import "variables";
+// 字体
+@import "font";
+// 重置页面样式（小程序单独处理）
+@import "reset";
+// 页面
+@import "page";
+// 布局
+@import "layout/index";
+// 组件
+@import "component/index";
+// 属性
+@import "props/index";
+// 状态
+@import "state";

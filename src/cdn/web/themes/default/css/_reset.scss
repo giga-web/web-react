@@ -1,0 +1,35 @@
+/**重置浏览器自带样式**/
+*{
+  font-size:0;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+
+  &:hover {
+    color: $text_label_primary;
+  }
+}
+
+img {
+  border: none;
+}
+
+dd {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+table {
+  border-spacing: 0;
+}

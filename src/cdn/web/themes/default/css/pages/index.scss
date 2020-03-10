@@ -1,0 +1,97 @@
+.page-index {
+  width: 100%;
+  height: calc(100vh - 90px - 138px - 1px);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .hook01 {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    .hook0101 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      transform: scale(1);
+      transition: transform 2s;
+
+      .hook010101,
+      .hook010102 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+
+      /*.hook010101 {
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1.5s;
+      }*/
+      
+      &.zoomIn {
+        transition: transform 5s;
+        transform: scale(1.1);
+        transform: scale(1)\9;
+
+        /*.hook010101 {
+          opacity: 1;
+        }*/
+      }
+
+    }
+  }
+
+  .hook02 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    .text-label-white-lg {
+      letter-spacing: 30px;
+    }
+
+    .hook0201 {
+      opacity: 0;
+      transform: translate(0, 234px);
+      transition: all 4s;
+    }
+
+    .hook0202 {
+      opacity: 0;
+      transform: translate(0, 150px);
+      transition: all 4s;
+    }
+
+    .hook0203 {
+      opacity: 0;
+      transform: translate(0, 93px);
+      transition: all 4s;
+    }
+
+    .in {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  .hook03 {
+    position: relative;
+    top: -6px;
+    margin-left: 12px;
+  }
+}

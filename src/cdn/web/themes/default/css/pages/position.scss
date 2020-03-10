@@ -1,0 +1,40 @@
+@import "../variables";
+
+.page-position {
+  background-color: #fff;
+  padding-bottom: 24px;
+
+  .hook01 {
+    .hook0101 {
+      height: 440px;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+  }
+
+  th {
+    text-align: left;
+    padding-top: 48px;
+    padding-bottom: 32px;
+
+    &:last-child {
+      text-align: right;
+    }
+
+    &.text-title-normal-md {
+      font-size: 16px;
+    }
+  }
+  td {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 1px solid $border_normal;
+    line-height: 1.5;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+}

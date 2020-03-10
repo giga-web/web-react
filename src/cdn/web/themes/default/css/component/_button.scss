@@ -1,0 +1,40 @@
+/*
+.button-primary {}
+.button-normal {}
+.button-normal-ghost {
+  color: #fff;
+  background: transparent !important;
+  border-color: #fff;
+}
+.button-dashed {}
+.button-danger {}
+.button-link {}
+*/
+
+
+// 数组
+$imgArr:(normal-ghost, 48px, transparent, 1px solid #fff, 0),
+;
+@each $className, $height, $bgColor, $border, $radius in $imgArr{
+  .button-#{$className} {
+    height: $height;
+    line-height: $height;
+    border: $border;
+    border-radius: $radius;
+    background-color: $bgColor;
+
+    display: block;
+    box-sizing: content-box;
+    text-align: center;
+    transition: all 0.5s;
+
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+.button-normal-ghost:hover {
+  background-color: $bg_button_primary_light;
+}

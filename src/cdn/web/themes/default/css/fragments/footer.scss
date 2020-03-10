@@ -1,0 +1,32 @@
+.page-footer {
+  .hook01 {
+    a {
+      display: block;
+      line-height: 90px;
+    }
+  }
+  .hook02 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    min-height: 880px;
+    background: #fff;
+    padding: 48px;
+    transform: translate(100%, 0);
+    transition: transform 0.5s;
+
+    &.show {
+      transform: translate(0, 0);
+    }
+  }
+  .hook03 {
+    line-height: 22px;
+  }
+  .hook04 {
+    width: 138px;
+    text-align: center;
+    padding-top: 12px;
+  }
+}

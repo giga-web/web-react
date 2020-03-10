@@ -1,0 +1,55 @@
+/**
+ * 水平flow布局
+ */
+$wrapRowArr:(flow-row),
+;
+// 遍历生成页面背景颜色
+@each $name in $wrapRowArr{
+  .#{$name} {
+    &:after {
+      content: '';
+      clear: both;
+      height: 0;
+      display: block;
+    }
+  }
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.dib {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.tac {
+  text-align: center;
+}
+.vam {
+  vertical-align: middle;
+}
+
+.flow-column-position {
+  position: relative;
+
+  & > * {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.flow-column {
+  display: table;
+
+  & > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,15 @@
+// 标题-所有加粗的文本
+$titleSizeArr: (xs, 12),(sm, 14),(md, 20),(lg, 28),(xl, 48),;
+$titleColorArr: (white, #fff), (normal, $text_title_normal),(primary, $text_title_primary),;
+
+@each $sizeName, $size in $titleSizeArr{
+  @each $colorName, $color in $titleColorArr{
+    .text-title-#{$colorName}-#{$sizeName} {
+      color: #{$color};
+      font-size: #{$size}px;
+      line-height: 1;
+      font-weight: bold;
+    }
+  }
+}
+

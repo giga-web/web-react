@@ -1,0 +1,26 @@
+/**
+ * 水平flow布局
+ */
+$wrapRowArr:(grid),
+;
+// 遍历生成页面背景颜色
+@each $name, $horAlign, $verAlign in $wrapRowArr{
+  .#{$name} {
+    text-align: justify;
+    font-size: 1px\9;
+    font-size: 1px\0;
+    font-size: 1px\9\0;
+
+    & > * {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 0;
+    }
+  }
+}

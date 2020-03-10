@@ -1,0 +1,9 @@
+// 设置背景颜色
+$bgArr:(bg-white, #fff),
+;
+// 遍历生成页面背景颜色
+@each $name,$bgColor in $bgArr{
+  .#{$name} {
+    background-color: $bgColor
+  }
+}

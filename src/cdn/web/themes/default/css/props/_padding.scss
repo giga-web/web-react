@@ -1,0 +1,8 @@
+@for $i from 1 through 100 {
+  .pt#{$i} { padding-top: #{$i}px; }
+  .pr#{$i} { padding-right: #{$i}px; }
+  .pb#{$i} { padding-bottom: #{$i}px; }
+  .pl#{$i} { padding-left: #{$i}px; }
+  .plr#{$i} { padding-left: #{$i}px; padding-right: #{$i}px; }
+  .p#{$i} { padding: #{$i}px; }
+}

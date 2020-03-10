@@ -1,0 +1,46 @@
+/**
+ * 水平flex布局
+ * 水平方向的对齐方式：$horAlign (flex-start,flex-end,center,space-around,space-between,space-evenly)
+ * 垂直方向的对齐方式：$verAlign (flex-start,flex-end,center)
+ */
+$wrapRowArr:(flex-row-start-center, flex-start,center),
+        (flex-row-end-center, flex-end,center),
+        (flex-row-center-center, center,center),
+        (flex-row-s-between-center, space-between,center),
+        (flex-row-s-around-center, space-around,center),
+        (flex-row-s-evenly-center, space-evenly,center),
+        (flex-row-s-between-start, space-between,flex-start),;
+// 遍历生成页面背景颜色
+@each $name,$horAlign,$verAlign in $wrapRowArr{
+  .#{$name} {
+    display: flex;
+    flex-direction: row;
+    // 垂直方向上
+    align-items: $verAlign;
+    // 水平方向上
+    justify-content: $horAlign;
+  }
+}
+
+/**
+ * 垂直flex布局
+ * 水平方向的对齐方式：$horAlign (flex-start,flex-end,center,space-around,space-between,space-evenly)
+ * 垂直方向的对齐方式：$verAlign (flex-start,flex-end,center)
+ */
+$wrapColumnArr:(flex-column-start-start, flex-start,flex-start),
+        (flex-column-start-end, flex-start,flex-end),
+        (flex-column-start-center, flex-start,center),
+        (flex-column-start-s-between, flex-start,space-between),
+        (flex-column-start-s-around, flex-start,space-around),
+        (flex-column-start-s-evenly, flex-start,space-evenly);
+// 遍历生成页面背景颜色
+@each $name,$horAlign,$verAlign in $wrapColumnArr{
+  .#{$name} {
+    display: flex;
+    flex-direction: column;
+    // 水平方向上
+    align-items: $horAlign;
+    // 垂直方向上
+    justify-content: $verAlign;
+  }
+}

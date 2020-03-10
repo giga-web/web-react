@@ -1,0 +1,12 @@
+// 设置宽度
+$widthArr:(w100p, 100%),
+          (w1180, 1180px),
+          (w880, 880px),
+          (w540, 540px),
+;
+@each $name,$width in $widthArr{
+  .#{$name} {
+    width:#{$width};
+    box-sizing: border-box;
+  }
+}

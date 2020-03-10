@@ -1,0 +1,26 @@
+$triangleArr:(triangle01, left, 6px 0 6px 10px, #fff),
+             (triangle02, bottom, 0 8px 13px 8px, #fff),
+;
+// 遍历生成页面背景颜色
+@each $name, $dir, $width, $color in $triangleArr{
+  .#{$name} {
+    font-size: 0;
+    border-width: #{$width};
+    border-style: solid;
+    border-color: transparent;
+    border-#{$dir}-color: #{$color};
+  }
+}
+
+$lineArr:(line01, 1px, $border_normal),
+         (line02, 2px, $bg_container_primary),
+;
+// 遍历生成页面背景颜色
+@each $name, $height, $bgColor in $lineArr{
+  .#{$name} {
+    font-size: 0;
+    line-height: 0;
+    height: #{$height};
+    background: #{$bgColor};
+  }
+}

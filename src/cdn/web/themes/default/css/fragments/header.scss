@@ -1,0 +1,100 @@
+.page-header {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+
+  .hook01 {
+    .hook0101 {
+      position: relative;
+      padding-bottom: 9px;
+      cursor: default;
+
+      .line02 {
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        transition: all 0.5s;
+      }
+    }
+
+    &.slideDown {
+      .hook0101 {
+        .line02 {
+          left: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .hook010101 {
+    letter-spacing: 5px;
+  }
+
+  .hook09 {
+    position: relative;
+    z-index: 11;
+    background-color: #fff;
+  }
+
+  .hook03 {
+    position: relative;
+  }
+  
+  .hook10 {
+    width: 1034px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%);
+    transition: all 0.5s;
+
+    &.slideDown {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0%);
+    }
+
+    .hook1001 {
+      position: relative;
+      height: 34px;
+      padding-top: 21px;
+
+      .triangle02 {
+        position: absolute;
+        bottom: 0;
+        right: 340px;
+      }
+    }
+  }
+
+  .hook20 {
+    width: 810px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+
+    &.slideDown {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+
+    .hook2001 {
+      position: relative;
+      height: 34px;
+      padding-top: 21px;
+
+      .triangle02 {
+        position: absolute;
+        bottom: 0;
+        right: 30px;
+      }
+    }
+  }
+}

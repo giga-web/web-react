@@ -1,0 +1,13 @@
+// 普通文本
+$titleSizeArr: (xs, 12),(sm, 14),(md, 20),(lg, 22),(xl, 48),;
+$titleColorArr: (white, #fff),(normal, $text_label_normal),(light, $text_label_light),(primary, $text_label_primary),;
+
+@each $sizeName, $size in $titleSizeArr{
+  @each $colorName, $color in $titleColorArr{
+    .text-label-#{$colorName}-#{$sizeName} {
+      color: #{$color};
+      font-size: #{$size}px;
+      line-height: 1;
+    }
+  }
+}

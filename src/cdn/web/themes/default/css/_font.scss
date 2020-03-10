@@ -1,0 +1,18 @@
+@font-face {font-family: "robote";
+  src: url('../media/font/robote/robote.eot?t=1571724462392'); /* IE9 */
+  src: url('../media/font/robote/robote.eot?t=1571724462392#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../media/font/robote/robote.woff?t=1571724462392') format('woff'),
+  url('../media/font/robote/robote.ttf?t=1571724462392') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+}
+
+@font-face {font-family: "light";
+  src: url('../media/font/light/light.ttf?t=1571724462392') format('truetype');
+}
+
+html {
+  font-family: light, -apple-system, "PingFang SC", "Microsoft YaHei";
+}
+
+.ff-robote {
+  font-family: robote;
+}

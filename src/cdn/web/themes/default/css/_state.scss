@@ -1,0 +1,10 @@
+@import "variables";
+
+// 设置没有边框状态
+.state-no-border{
+  border:none !important;
+}
+
+.state-color-primary{
+  color: $text_label_primary;
+}
