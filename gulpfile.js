@@ -5,27 +5,37 @@ var postcss = require('gulp-postcss');
 var fileinclude  = require('gulp-file-include');
 var uglify  = require('gulp-uglify');
 var browserSync = require('browser-sync').create();
+var babel = require('gulp-babel');
+var address = require('address');
 
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 
+browserSync.init({
+  server: {
+    baseDir: "build"
+  },
+  port: 3000,
+  host: address.ip(),
+  open: 'external', // https://browsersync.io/docs/options#option-open
+});
+
 function clean() {
-  return del('dist/**', {force:true});
+  return del('build/**', {force:true});
 }
 function html() {
-    var html = gulp.src('src/**/*.html')
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file',
-            context: {
-                version: '?='+ new Date().getTime()
-            },
-            indent: true
-        }))
-        .pipe(gulp.dest('dist/'));
+  var html = gulp.src('src/**/*.html')
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file',
+      context: {
+        version: '?='+ new Date().getTime()
+      },
+      indent: true
+    }))
+    .pipe(gulp.dest('build/'));
 
-    return html;
-
+  return html;
 }
 
 function css() {
@@ -37,41 +47,36 @@ function css() {
   return gulp.src("src/cdn/**/css/**/*.scss")
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss(processors))
-    .pipe(gulp.dest("dist/cdn/"));
+    .pipe(gulp.dest("build/cdn/"));
 }
 
 function js() {
   return gulp.src("src/cdn/**/javascript/**/*.js", { sourcemaps: true })
+    .pipe(babel({
+      presets: ['@babel/env', '@babel/preset-react']
+    }))
     // .pipe(uglify())
-    .pipe(gulp.dest("dist/cdn/", { sourcemaps: '.' }));
+    .pipe(gulp.dest("build/cdn/", { sourcemaps: '.' }));
 }
 
 function media() {
   return gulp.src("src/cdn/**/media/**")
-    .pipe(gulp.dest("dist/cdn/"))
+    .pipe(gulp.dest("build/cdn/"))
 }
 
 function libs() {
   return gulp.src("src/cdn/**/libs/**")
-    .pipe(gulp.dest("dist/cdn/"))
+    .pipe(gulp.dest("build/cdn/"))
 }
 
 function server(argument) {
-  browserSync.init({
-    server: {
-      baseDir: "dist"
-    },
-    port: 3000,
-    host: '192.168.104.40',
-  });
-
   gulp.watch("src/**/*.html", html);
   gulp.watch("src/cdn/**/css/**/*.scss", css);
   gulp.watch("src/cdn/**/javascript/**/*.js", js);
   gulp.watch("src/cdn/**/media/**", media);
   gulp.watch("src/cdn/**/libs/**", libs);
 
-  gulp.watch("dist").on('change', browserSync.reload);
+  gulp.watch("build").on('change', browserSync.reload);
 }
 
 // exports.default = gulp.series(clean, html);
